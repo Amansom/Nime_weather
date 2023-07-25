@@ -1,0 +1,25 @@
+<!-- weather_api/templates/weather_api/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body>
+    <h1>Welcome to the Weather App</h1>
+    <form action="{% url 'get_weather' %}" method="post">
+        {% csrf_token %}
+        <label for="option">Choose an option:</label>
+        <select name="option" id="option">
+            <option value="1">Get weather</option>
+            <option value="2">Get Wind Speed</option>
+            <option value="3">Get Pressure</option>
+            <option value="0">Exit</option>
+        </select>
+        <br>
+        <label for="date">Enter the date (YYYY-MM-DD):</label>
+        <input type="text" id="date" name="date">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
